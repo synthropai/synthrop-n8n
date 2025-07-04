@@ -24,17 +24,19 @@ jobs:
           N8N_VERSION=$(docker run --rm docker.n8n.io/n8nio/n8n:latest n8n --version)
           echo "N8N version: $N8N_VERSION"
 
-          # Extract major and minor version
+          # Extract major, minor, and patch version
           MAJOR_VERSION=$(echo $N8N_VERSION | cut -d. -f1)
           MINOR_VERSION=$(echo $N8N_VERSION | cut -d. -f2)
+          PATCH_VERSION=$(echo $N8N_VERSION | cut -d. -f3)
 
           # Set output variables
           echo "version=$N8N_VERSION" >> $GITHUB_OUTPUT
           echo "major=$MAJOR_VERSION" >> $GITHUB_OUTPUT
           echo "minor=$MINOR_VERSION" >> $GITHUB_OUTPUT
+          echo "patch=$PATCH_VERSION" >> $GITHUB_OUTPUT
 
           # Generate tag list
-          TAGS="synthropai/synthrop-n8n:latest,synthropai/synthrop-n8n:$MAJOR_VERSION,synthropai/synthrop-n8n:$MAJOR_VERSION.$MINOR_VERSION"
+          TAGS="synthropai/synthrop-n8n:latest,synthropai/synthrop-n8n:$MAJOR_VERSION,synthropai/synthrop-n8n:$MAJOR_VERSION.$MINOR_VERSION,synthropai/synthrop-n8n:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
           echo "tags=$TAGS" >> $GITHUB_OUTPUT
       -
         name: Login to Docker Hub
