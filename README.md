@@ -2,9 +2,6 @@
 
 - [Docker Image](https://hub.docker.com/r/synthropai/synthrop-n8n)
 
-## TODO
-- Update credentials on [update.yml](.github/workflows/update.yml)
-
 ## Modules
 
 | Module                                 | Description                                            |
