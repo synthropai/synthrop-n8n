@@ -27,4 +27,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: frkr/casa-work:latest
+          tags: synthropai/synthrop-n8n:latest
