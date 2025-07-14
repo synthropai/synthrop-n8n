@@ -4,10 +4,19 @@
 
 ## Base Image
 
-This custom image is based on the official n8n Docker image:
 ```
-FROM docker.n8n.io/n8nio/n8n:latest
+FROM docker.n8n.io/n8nio/n8n:stable
 ```
+
+### Tag Information
+- The 'stable' tag represents the latest production version of N8N tested for most environments
+- The 'next' tag is the most up-to-date version tested in staging environments
+- Many clients prefer the 'next' version, which is also used in the cloud version
+- However, 'stable' is commonly used by N8N's enterprise clients
+
+### Platform Support
+- linux/amd64
+- linux/arm64
 
 ## Custom Alpine Packages
 
@@ -27,7 +36,7 @@ The following Alpine packages are installed:
 | @splainez/n8n-nodes-phonenumber-parser | Utility for parsing and formatting phone numbers       |
 | n8n-nodes-chatwoot                     | Integration with Chatwoot customer messaging platform  |
 | n8n-nodes-globals                      | Support for global variables across workflows          |
-| @aldinokemal2104/n8n-nodes-gowa       | Integration with GoWA (Go WhatsApp) API                |
+| @aldinokemal2104/n8n-nodes-gowa        | Integration with GoWA (Go WhatsApp) API                |
 
 ## Environment Variables
 

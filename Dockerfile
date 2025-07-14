@@ -1,4 +1,12 @@
-FROM docker.n8n.io/n8nio/n8n:latest
+# The 'stable' tag represents the latest production version of N8N tested for most environments
+# The 'next' tag is the most up-to-date version tested in staging environments
+# Many clients prefer the 'next' version, which is also used in the cloud version
+# However, 'stable' is commonly used by N8N's enterprise clients
+
+# linux/amd64
+# linux/arm64
+
+FROM docker.n8n.io/n8nio/n8n:stable
 
 # Custom Alpine packages
 USER root
