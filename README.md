@@ -1,10 +1,13 @@
-# Synthrop AI - Custom Image [![Update Image](https://github.com/synthropai/synthrop-n8n/actions/workflows/update.yml/badge.svg)](https://github.com/synthropai/synthrop-n8n/actions/workflows/update.yml)
+# Synthrop AI - Custom Image
+
+[![Building Status](https://github.com/synthropai/synthrop-n8n/actions/workflows/update.yml/badge.svg)](https://github.com/synthropai/synthrop-n8n/actions/workflows/update.yml)
 
 - [Docker Image](https://hub.docker.com/r/synthropai/synthrop-n8n)
+- [Tags and Analyses](https://hub.docker.com/r/synthropai/synthrop-n8n/tags)
 
 ## Base Image
 
-```
+```dockerfile
 FROM docker.n8n.io/n8nio/n8n:stable
 ```
 
