@@ -1,4 +1,4 @@
-# Synthrop AI - Custom Image
+# Synthrop AI - Custom Image [![Update Image](https://github.com/synthropai/synthrop-n8n/actions/workflows/update.yml/badge.svg)](https://github.com/synthropai/synthrop-n8n/actions/workflows/update.yml)
 
 - [Docker Image](https://hub.docker.com/r/synthropai/synthrop-n8n)
 
