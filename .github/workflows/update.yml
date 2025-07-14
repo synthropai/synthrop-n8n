@@ -8,7 +8,7 @@ on:
 
 jobs:
   docker:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-stable
     steps:
       -
         name: Checkout
@@ -17,11 +17,11 @@ jobs:
         name: Get n8n version
         id: n8n_version
         run: |
-          # Pull the latest n8n image to get its version
-          docker pull docker.n8n.io/n8nio/n8n:latest
+          # Pull the stable n8n image to get its version
+          docker pull docker.n8n.io/n8nio/n8n:stable
 
           # Extract the n8n version from the image
-          N8N_VERSION=$(docker run --rm docker.n8n.io/n8nio/n8n:latest n8n --version)
+          N8N_VERSION=$(docker run --rm docker.n8n.io/n8nio/n8n:stable n8n --version)
           echo "N8N version: $N8N_VERSION"
 
           # Extract major, minor, and patch version
@@ -36,7 +36,7 @@ jobs:
           echo "patch=$PATCH_VERSION" >> $GITHUB_OUTPUT
 
           # Generate tag list
-          TAGS="synthropai/synthrop-n8n:latest,synthropai/synthrop-n8n:$MAJOR_VERSION,synthropai/synthrop-n8n:$MAJOR_VERSION.$MINOR_VERSION,synthropai/synthrop-n8n:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
+          TAGS="synthropai/synthrop-n8n:latest,synthropai/synthrop-n8n:stable,synthropai/synthrop-n8n:$MAJOR_VERSION,synthropai/synthrop-n8n:$MAJOR_VERSION.$MINOR_VERSION,synthropai/synthrop-n8n:$MAJOR_VERSION.$MINOR_VERSION.$PATCH_VERSION"
           echo "tags=$TAGS" >> $GITHUB_OUTPUT
       -
         name: Login to Docker Hub
